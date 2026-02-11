@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page Atha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    }
+    .login-box {
+      background: rgb(255, 255, 255);
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 0 24px 6px rgba(0,0,0,0.5), 0 0 40px 10px rgba(138,138,138,0.5);
+    }
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      color: rgb(255, 255, 255);
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+      background-image: url(./b9f4946a182ffa63c486172bb4d79b97.jpg);
+      background-size: cover;
+    }
+    .login-box button:hover {
+      background-image: url(./download.jpeg);
+      size: cover;
+      box-shadow: 0 0 24px 6px rgba(0,0,0,0.5), 0 0 40px 10px rgba(138,138,138,0.5);
+    }
+    .message {
+      margin-top: 12px;
+      font-weight: bold;
+    }
+    video#bg-video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop id="bg-video">
+  <source src="./video.mp4.mp4" type="video/mp4">
+  </video>
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const msg = document.getElementById("message");
+
+      const validUser = "atha";
+      const validPass = "123";
+
+      if (user === validUser && pass === validPass) {
+        msg.style.color = "green";
+        msg.innerText = "Login berhasil! 🎉";
+      } else {
+        msg.style.color = "red";
+        msg.innerText = "Username atau password salah!";
+      }
+    }
+  </script>
+</body>
+</html>
